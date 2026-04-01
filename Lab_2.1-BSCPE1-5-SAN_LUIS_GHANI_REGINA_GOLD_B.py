@@ -1,0 +1,82 @@
+# START
+
+# STEP 1: READ numbers.txt
+#   OPEN numbers.txt FOR READING
+input_file = open("numbers.txt", "r")
+
+#   READ all lines INTO numbers
+numbers = input_file.readlines()
+
+#   CLOSE numbers.txt
+input_file.close()
+
+# STEP 2: SEPARATE numbers INTO even AND odd
+#   SET even_numbers TO empty list
+even_numbers = []
+
+#   SET odd_numbers TO empty list
+odd_numbers = []
+
+#   FOR EACH line IN numbers
+for line in numbers:
+
+    #   SKIP empty lines
+    if line.strip() == "":
+        continue
+
+    #   SET num TO integer value of line
+    num = int(line.strip())
+
+    #   IF num MOD 2 == 0 THEN
+    if num % 2 == 0:
+
+        #   ADD num TO even_numbers
+        even_numbers.append(num)
+
+    #   ELSE
+    else:
+
+        #   ADD num TO odd_numbers
+        odd_numbers.append(num)
+
+    #   END IF
+#   END FOR
+
+# STEP 3: WRITE even numbers TO even.txt
+#   OPEN even.txt FOR WRITING
+even_file = open("even.txt", "w")
+
+#   FOR EACH num IN even_numbers
+for num in even_numbers:
+
+    #   WRITE num TO even.txt
+    even_file.write(str(num) + "\n")
+
+#   END FOR
+#   CLOSE even.txt
+even_file.close()
+
+# STEP 4: WRITE odd numbers TO odd.txt
+#   OPEN odd.txt FOR WRITING
+odd_file = open("odd.txt", "w")
+
+#   FOR EACH num IN odd_numbers
+for num in odd_numbers:
+
+    #   WRITE num TO odd.txt
+    odd_file.write(str(num) + "\n")
+
+#   END FOR
+#   CLOSE odd.txt
+odd_file.close()
+
+# STEP 5: DISPLAY results
+#   PRINT even_numbers
+print("Even numbers:", even_numbers)
+
+#   PRINT odd_numbers
+print("Odd numbers: ", odd_numbers)
+
+# END
+
+# i was trying to do pseudocode with code in between so i can look at it in the future and get the idea fast
